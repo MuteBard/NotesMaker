@@ -18,8 +18,6 @@
     Doing something within a task like deleting, adding is called an action. 
     This is to save me from making errors and to save me time in creating and managing projects.
 
-![](E-1.png)
-
 ## How to use?
 
     It can be used to deal with additional platforms but one step at a time.
