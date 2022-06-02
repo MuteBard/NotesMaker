@@ -1,4 +1,4 @@
-const { makeDirectory, makeFile, removeFile, getFilesFromDirectory } = require('./FileActions');
+const { makeDirectory, makeFile, removeFile, removeFolder, getFilesFromDirectory } = require('./FileActions');
 const { tasks, actions } = require('./Enums');
 const args = require('./ManageArgs');
 
@@ -54,7 +54,11 @@ async function deleteUnusedMarkdowns(baseDirectory) {
     const updatedBaseDirectory = baseDirectory.concat(['Notes', 'dev'])
     const fileList = await getFilesFromDirectory(updatedBaseDirectory);
     fileList.map(async (fileName) => {
-        await removeFile(updatedBaseDirectory, fileName);
+        const removedFileName = await removeFile(updatedBaseDirectory, fileName);
+        if(removedFileName != null){
+            const folderToBeRemoved = removedFileName.split('.')[0];
+            await removeFolder(baseDirectory.concat(['Notes', 'images']), folderToBeRemoved);
+        }
     });
 }
 

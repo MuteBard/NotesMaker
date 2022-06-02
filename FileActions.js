@@ -1,4 +1,4 @@
-const { readdir, mkdir, move, rename, writeFile, readFile, deleteFile, listFiles, prompt } = require('./PromisifedFunctions');
+const { readdir, rmdir, mkdir, move, rename, writeFile, readFile, deleteFile, listFiles, prompt } = require('./PromisifedFunctions');
 const { platforms } = require('./Enums');
 const path = require('path');
 
@@ -35,8 +35,15 @@ async function removeFile(base, file) {
     const destination = path.join(...base, file);
     const data = await readFile(destination);
     if (data.includes('#### Tags: []')) {
-        return deleteFile(destination);
+        await deleteFile(destination);
+        return file;
     }
+    return null;
+}
+
+async function removeFolder(base, folder) {
+    const destination = path.join(...base, folder);
+    await rmdir(destination);
 }
 
 async function renameFile(currPath, newPath){
@@ -65,6 +72,7 @@ exports.findOrMakeDirectory = findOrMakeDirectory;
 exports.makeDirectory = makeDirectory;
 exports.makeFile = makeFile;
 exports.removeFile = removeFile;
+exports.removeFolder = removeFolder;
 exports.getFilesFromDirectory = getFilesFromDirectory;
 exports.getDirFromDirectory = getDirFromDirectory;
 exports.stateQuestion = stateQuestion;
