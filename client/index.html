@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="index.css">
+    <title>Create Notes</title>
+</head>
+
+<body>
+    <h1>Create Notes</h1>
+    <div>
+        <button id="clearAll" class="button is-primary is-normal">Reset</button>
+    </div>
+    <form id="form">
+
+        <div>
+            <h2>Select Folder</h2>
+            <select id="selected_folder" class="select-l is-family-monospace">
+                <option value=''>Choose Folder</option>
+            </select>
+        </div>
+
+        <div id="selected_sub_folder_container">
+            <h2>Select Sub Folder</h2>
+            <select id="selected_sub_folder" class="select-l is-family-monospace">
+                <option value=''>Choose Folder</option>
+            </select>
+        </div>
+
+        <div>
+            <h2>Select Action</h2>
+            <select id="selected_action" class="select-l is-family-monospace">
+                <option value=''>Choose Action</option>
+                <option value='CREATE'>Create Notespace</option>
+                <option value='MARKDOWN'>Manage Markdowns</option>
+                <option value='PROJECTS'>Manage Projects</option>
+            </select>
+        </div>
+
+    </form>
+    <div>
+        <button class="button is-primary" id="submit">Done</button>
+    </div>
+    <script src="./index.js"></script>
+</body>
+
+</html>

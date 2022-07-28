@@ -1,0 +1,109 @@
+@import "https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css";
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100vh;
+    align-items: center;
+    justify-content: flex-start;
+    /* font-family: "Ek Mukta"; */
+    letter-spacing: 1px;
+}
+
+h1 {
+    margin-top: 10vh;
+    font-size: 2.5rem;
+    max-width: 500px;
+    letter-spacing: 3px;
+    text-align: center;
+    line-height: 1.5;
+    text-transform: capitalize;
+    font-weight: 800;
+    margin-bottom: 1em;
+
+}
+
+h1 span {
+    color: #FF908B;
+}
+
+h2 {
+    /* text-decoration: underline; */
+    font-weight: 800;
+    margin-bottom: 1em;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+}
+
+form>div {
+    margin: 1em;
+    padding: 1em;
+    background-color: #eee;
+    border-radius: 5px;
+    width: 500px;
+
+}
+
+select {
+    width: 13em;
+    font-size: 16px;
+    border: 0px;
+    background-color: #00c4a7;
+    color: white;
+    height: 2.5em;
+
+    border-radius: 5px;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    text-align-last: center;
+}
+
+label {
+    margin-left: 1em;
+}
+
+.select-l {
+    width: 13em;
+}
+
+.select-m {
+    width: 7em;
+}
+
+.select-s {
+    width: 4em;
+    height: 2em;
+    margin-left: 1em;
+
+}
+
+.hasSelect {
+    margin: .5em 0;
+}
+
+
+.addFlex {
+    display: flex;
+    flex-direction: row;
+}
+
+.checkboxDiv {
+    display: flex;
+    flex-direction: column;
+}
+
+.checkboxDiv:last-child {
+    border-bottom: 0px;
+}
